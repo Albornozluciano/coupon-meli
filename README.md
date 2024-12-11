@@ -263,6 +263,7 @@ Se han realizado una serie de decisiones técnicas para poder brindar resilienci
 5) Las peticiones a items se realizan de manera asíncrona (se usan virtual threads). En caso de ser un problema por la cantidad de
    peticiones hacia items, se puede aplicar un approach distinto: realizar peticiones en ráfagas y chequear con el método "calculate" cada
    vez que termine una ráfaga para validar si se encuentra alguna solución y poder retornar antes de consultar todos los items solicitados.
+6) Como posible mejora habría que diferenciar los status 4xx de items api, es decir, en caso de 429 no deberia cachearse la respuesta.
 
 ## Contacto
 
