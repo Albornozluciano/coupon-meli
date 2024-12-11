@@ -136,7 +136,9 @@ Luego de realizar las pruebas se debe hacer un ```docker-compose down``` para fi
 
 Se encuentra desplegado en AWS el servicio para que pueda ser usado mediante la siguiente URL:
 
-http://couponlb-1031475203.us-east-2.elb.amazonaws.com/coupon
+POST -> http://couponlb-1031475203.us-east-2.elb.amazonaws.com/coupon
+
+Swagger: http://couponlb-1031475203.us-east-2.elb.amazonaws.com/swagger-ui/index.html
 
 ```
 Request:
