@@ -1,0 +1,10 @@
+services:
+  coupon-app:
+    image: lucianoja/coupon-1.0
+    ports:
+      - '8080:8080'
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - SPRING_PROFILES_ACTIVE=aws
