@@ -216,15 +216,15 @@ MLA1428221555 - $650000.00
 
 Amount máximo es menor al precio del item
 
-![img.png](assets/Prueba en pro caso 1.png)
+![img.png](assets/Prueba-en-pro-caso-1.png)
 
 Amount máximo es igual al precio del item
 
-![img_1.png](assets/Prueba en pro caso 2.png)
+![img_1.png](assets/Prueba-en-pro-caso-2.png)
 
 Amount máximo es mayor al precio del item
 
-![img_2.png](assets/Prueba en pro caso 3.png)
+![img_2.png](assets/Prueba-en-pro-caso-3.png)
 
 - Múltiples items
 
@@ -242,10 +242,10 @@ MLA1326296634 $90000
 Monto máximo $500000
 ```
 
-![img_4.png](assets/Prueba en pro ejemplo enunciado.png)
+![img_4.png](assets/Prueba-en-pro-ejemplo-enunciado.png)
 
 Usando el algoritmo exhaustivo se devuelve la respuesta que maximiza aún más el monto:
-![img_5.png](assets/Caso en pro ejemplo propio.png)
+![img_5.png](assets/Caso-en-pro-ejemplo-propio.png)
 
 # Decisiones técnicas
 
