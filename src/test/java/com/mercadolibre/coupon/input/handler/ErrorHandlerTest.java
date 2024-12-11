@@ -13,6 +13,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 @ExtendWith(MockitoExtension.class)
 class ErrorHandlerTest {
@@ -47,6 +49,30 @@ class ErrorHandlerTest {
     CustomException customException = new CustomException(apiError);
 
     ApiError result = errorHandler.handleCustomException(customException, response);
+
+    assertNotNull(result);
+    assertEquals(apiError.getCode(), result.getCode());
+    assertEquals(apiError.getDetail(), result.getDetail());
+  }
+
+  @Test
+  void handleNoHandlerFoundException() {
+    final ApiError apiError = new ApiError(ValidationError.ENDPOINT_NOT_FOUND,
+        "The endpoint you are trying to access does not exist. Please check swagger: /swagger-ui/index.html");
+
+    final ApiError result = errorHandler.handleNoHandlerFoundException(new NoHandlerFoundException("GET", "URL", null));
+
+    assertNotNull(result);
+    assertEquals(apiError.getCode(), result.getCode());
+    assertEquals(apiError.getDetail(), result.getDetail());
+  }
+
+  @Test
+  void handleHttpRequestMethodNotSupportedException() {
+    final ApiError apiError = new ApiError(ValidationError.METHOD_NOT_ALLOWED,
+        "The method you are trying to use is not allowed. Please check swagger: /swagger-ui/index.html");
+
+    final ApiError result = errorHandler.handleHttpRequestMethodNotSupportedException(new HttpRequestMethodNotSupportedException(""));
 
     assertNotNull(result);
     assertEquals(apiError.getCode(), result.getCode());
