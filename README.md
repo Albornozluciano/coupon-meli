@@ -249,7 +249,7 @@ Monto máximo $500000
 Usando el algoritmo exhaustivo se devuelve la respuesta que maximiza aún más el monto:
 ![img_5.png](assets/Caso-en-pro-ejemplo-propio.png)
 
-# Decisiones técnicas
+## Decisiones técnicas
 
 Se han realizado una serie de decisiones técnicas para poder brindar resiliencia al servicio:
 
@@ -264,6 +264,6 @@ Se han realizado una serie de decisiones técnicas para poder brindar resilienci
    peticiones hacia items, se puede aplicar un approach distinto: realizar peticiones en ráfagas y chequear con el método "calculate" cada
    vez que termine una ráfaga para validar si se encuentra alguna solución y poder retornar antes de consultar todos los items solicitados.
 
-# Contacto
+## Contacto
 
 En caso de dudas o preguntas pueden contactarse conmigo mediante casilla de correo: albornozlucianojulian@gmail.com
