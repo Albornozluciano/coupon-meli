@@ -36,10 +36,16 @@ public class ErrorHandler {
     return ex.getApiError();
   }
 
-  @ExceptionHandler({HttpRequestMethodNotSupportedException.class, NoHandlerFoundException.class})
-  public ApiError handleNoHandlerFoundException(final Exception ex) {
-    return new ApiError(ValidationError.METHOD_NOT_FOUND,
+  @ExceptionHandler(NoHandlerFoundException.class)
+  public ApiError handleNoHandlerFoundException(final NoHandlerFoundException ex) {
+    return new ApiError(ValidationError.ENDPOINT_NOT_FOUND,
         "The endpoint you are trying to access does not exist. Please check swagger: /swagger-ui/index.html");
+  }
+
+  @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+  public ApiError handleHttpRequestMethodNotSupportedException(final HttpRequestMethodNotSupportedException ex) {
+    return new ApiError(ValidationError.METHOD_NOT_ALLOWED,
+        "The method you are trying to use is not allowed. Please check swagger: /swagger-ui/index.html");
   }
 
 }
