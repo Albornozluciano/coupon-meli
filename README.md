@@ -94,11 +94,11 @@ Se ha llegado al 100% del coverage:
 
 Para ejecutarlo se deberá tener instalado docker y docker-compose:
 
-Primero se deberá clonar el repositorio con git clone.
-
-Luego se ejecuta el docker compose de la siguiente manera:
+Primero se deberá descargar/clonar el repositorio con git clone. Luego se ejecuta el docker compose de la siguiente manera:
 
 ```
+git clone https://github.com/Albornozluciano/coupon-meli.git
+cd coupon-meli
 docker-compose -f compose-local.yaml up
 ```
 

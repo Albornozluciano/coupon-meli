@@ -1,6 +1,6 @@
 services:
   coupon-app:
-    image: lucianoja/coupon-2.0
+    image: lucianoja/coupon-1.0
     ports:
       - '8080:8080'
     build:
